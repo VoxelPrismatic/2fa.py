@@ -42,3 +42,7 @@ Just hit `CTRL`+`C`, your terminal data should not have been cleared
 
 # Features
 If you click on a code, granted you running it in a VT200 compatible emulator, it'll turn a different color and will be copied to your clipboard.
+
+# Screenshots
+![image 1](https://media.discordapp.net/attachments/569698278271090728/826126157765410826/unknown.png)
+![image 2](https://media.discordapp.net/attachments/569698278271090728/826126193244766228/unknown.png)
