@@ -1,10 +1,10 @@
 # 2fa.py
 Google Authenticator but python
 
-- [Install for linux]
-- [Install for android]
-- [Setup]
-- [Run]
+- [Install for linux](#install-linux)
+- [Install for android](#install-android)
+- [Setup](#setup)
+- [Run](#run)
 
 # Install [linux]
 ```sh
