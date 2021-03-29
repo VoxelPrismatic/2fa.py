@@ -13,6 +13,7 @@ $ python3 -m pip install -U pyperclip
 ```
 
 # Install [android]
+note: assuming termux
 ```sh
 $ pkg install oathtool -y
 $ pkg install termux-api -y
@@ -35,3 +36,9 @@ $ python3 2fa.py
 ```
 
 You can also add `alias 2fa="python3 /path/to/2fa.py"` to your `.bashrc` so you dont have to type `python3` constantly
+
+# Exit
+Just hit `CTRL`+`C`, your terminal data should not have been cleared
+
+# Features
+If you click on a code, granted you running it in a VT200 compatible emulator, it'll turn a different color and will be copied to your clipboard.

@@ -21,6 +21,20 @@ import subprocess
 import time
 import pyperclip
 import re
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--verbose",
+    "-v",
+    "--debug",
+    "-d",
+    help = "Don't hide inputs",
+    action = "store_true",
+    default = False
+)
+args = parser.parse_args()
+
 term = curses.initscr()
 term.nodelay(True)
 
@@ -36,6 +50,9 @@ global selected, last_sel
 
 selected = -1
 last_sel = -1
+e = "\n\r"
+if not args.verbose:
+    e += "\x1b[8m"
 
 def print_shit():
     global selected, last_sel
@@ -56,12 +73,12 @@ def print_shit():
                 last_sel = selected
         else:
             st += f"{f[:3]} {f[3:]}\n\r"
-    print(f"{st}\x1b[93;1m{30 - int(time.time()) % 30}s left\x1b[0m", end = "\n\r\x1b[8m")
+    print(f"{st}\x1b[93;1m{30 - int(time.time()) % 30}s left\x1b[0m", end = e)
 
 term.getch()
 while True:
     if int(time.time()) % 30 == 0:
-        selected = ""
+        selected = -1
     print_shit()
     st = ""
     #while not st:
@@ -84,3 +101,4 @@ while True:
 #        print("\x1b[0m`" + " ".join(st) + "'\r\n")
 #        term.getch()
 #        time.sleep(10)
+
